@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// If bullet hits a Target component, active Hit()
+/// otherwise, play hit effect and disappear
+/// </summary>
 public class BulletBehaviour : MonoBehaviour
 {
     [SerializeField] ParticleSystem hitEffect;

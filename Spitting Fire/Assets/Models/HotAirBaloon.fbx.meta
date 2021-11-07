@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Baloon
-    second: {fileID: -2725430921125509534, guid: 11b08492e9a1d864296bb33b49c6c21f, type: 3}
+    second: {fileID: 2100000, guid: 0a2b0685e3c17014f99a5a143e37b493, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Gun
-    second: {fileID: -2725430921125509534, guid: 11b08492e9a1d864296bb33b49c6c21f, type: 3}
+    second: {fileID: 2100000, guid: 0a2b0685e3c17014f99a5a143e37b493, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

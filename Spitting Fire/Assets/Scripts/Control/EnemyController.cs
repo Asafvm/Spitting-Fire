@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Typical enemy behaviour. point at player. shoot player.
+/// </summary>
 public class EnemyController : MonoBehaviour
 {
     private GameObject player;
@@ -59,14 +62,11 @@ public class EnemyController : MonoBehaviour
         transform.LookAt(player.transform.position);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-        Gizmos.color = Color.red;
-    }
+    //draw a sphere around each enemy to visualize attack radius
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(transform.position, attackRange);
+    //    Gizmos.color = Color.red;
+    //}
 
-    private void OnDeath()
-    {
-
-    }
 }

@@ -5,6 +5,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Control the player physical movement and rotation
+/// </summary>
+
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
@@ -21,10 +26,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Flight Speed")]
     [SerializeField] float thrustAcceleration = 1f;
-    [SerializeField] float maxThrust = 100;
+    [SerializeField] float maxThrust = 80;
     public float thrustValue = 0;
-    [SerializeField] float boostTime = 2f;
-    [SerializeField] float timeBetweenBoosts = 5f;
+    [SerializeField] float boostTime = 1f;
+    [SerializeField] float timeBetweenBoosts = 10f;
     [Header("Turning Speed")]
     [SerializeField] float maxRollSpeed;
     [SerializeField] float maxYawSpeed;
@@ -104,20 +109,25 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateThrustDisplay()
     {
-        thrustDisplay.fillAmount = thrustValue / maxThrust;
+        float thrustPercent = thrustValue / maxThrust;
+        thrustDisplay.fillAmount = thrustPercent;
+        if (thrustPercent < .3f)
+            thrustDisplay.color = Color.red;
+        else
+            thrustDisplay.color = Color.green;
     }
 
     private void HandleBoost()
     {
         if (Input.GetKey(KeyCode.B))
         {
-            if (isBoosting) return;
+            if (timeSinceStartedBoosting < timeBetweenBoosts) return;
             isBoosting = true;
             timeSinceStartedBoosting = 0;
             StartCoroutine(Boost());
         }
         foreach (TrailRenderer effect in boostEffect)
-            effect.enabled = isBoosting;
+            effect.emitting = isBoosting;
     }
 
     private IEnumerator Boost()
@@ -129,8 +139,9 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(transform.forward * 30f);
             yield return null;
         }
-        yield return new WaitForSeconds(timeBetweenBoosts - boostTime);
         isBoosting = false;
+
+        yield return new WaitForSeconds(timeBetweenBoosts - boostTime);
 
 
     }
@@ -146,7 +157,7 @@ public class PlayerController : MonoBehaviour
         rb.useGravity = thrustValue < maxThrust / 3f;   //turn off gravity when thrust at a decent speed
         transform.Rotate(pitchSpeed, yawSpeed * thrustPercent, -rollSpeed); //rotate the plane
         rb.AddForce(transform.forward * maxThrust * thrustPercent); //add thrust force
-        rb.AddForce(-rb.velocity + Physics.gravity/gravityModifier);    //add drag and gravity force
+        rb.AddForce(-rb.velocity/2 + Physics.gravity/gravityModifier);    //add drag and gravity force
         
     }
 
@@ -198,7 +209,8 @@ public class PlayerController : MonoBehaviour
         
     }
 
-
+    //if player collided with boxcolliders, destroy player
+    //if player landed with wheels on the ground, ignore
     private void OnCollisionEnter(Collision collision)
     {
         ContactPoint[] contacts = new ContactPoint[collision.contactCount];

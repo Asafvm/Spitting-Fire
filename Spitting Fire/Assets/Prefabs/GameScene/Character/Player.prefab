@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d49928c4135ebf4e992a9f8b6e1adf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustAcceleration: 10
+  thrustAcceleration: 12
   maxThrust: 45
   thrustValue: 0
   boostTime: 2
@@ -811,8 +811,8 @@ MonoBehaviour:
   - {fileID: 7710535235567446193}
   - {fileID: 5644840575085027621}
   - {fileID: 5834304623925970358}
-  explosionForce: 500
-  explosionRadius: 5
+  explosionForce: 10
+  explosionRadius: 2
 --- !u!95 &1438731844
 Animator:
   serializedVersion: 3

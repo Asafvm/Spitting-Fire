@@ -5,6 +5,9 @@ using TMPro;
 
 using UnityEngine;
 
+/// <summary>
+/// UI score updater
+/// </summary>
 public class ScoreHandler : MonoBehaviour
 {
     private int killCount;

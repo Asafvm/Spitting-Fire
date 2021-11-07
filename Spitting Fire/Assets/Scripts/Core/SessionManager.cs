@@ -8,13 +8,16 @@ using TMPro;
 
 using UnityEngine;
 
+/// <summary>
+/// Handles score updating, starting and ending game sessions and interacting with SceneLoader
+/// </summary>
 public class SessionManager : MonoBehaviour
 {
     ScoreHandler scoreHandler;
     SceneLoader sceneLoader;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] float targetScore = 10;
-    [SerializeField] float gameOverDelay = 2f;
+    [SerializeField] float gameOverDelay = 1f;
 
     private void Awake()
     {

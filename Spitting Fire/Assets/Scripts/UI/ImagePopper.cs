@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Make an image appear and disappear (works with UI buttons)
+/// </summary>
 public class ImagePopper : MonoBehaviour
 {
     private bool show = false;

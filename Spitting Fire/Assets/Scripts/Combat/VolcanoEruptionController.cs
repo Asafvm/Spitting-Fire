@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+/// <summary>
+/// Control the timing to eruptions and rock initial vectors
+/// </summary>
+
 public class VolcanoEruptionController : MonoBehaviour
 {
     [SerializeField] VisualEffect lavaEffect;
@@ -43,15 +47,17 @@ public class VolcanoEruptionController : MonoBehaviour
 
     private void ShootRock()
     {
+        //convert angle to radians
+        float radAngle = Mathf.Deg2Rad * rockShootAngle;
         //get start and target points
         GameObject rock = Instantiate(magmaRock, spawnPoint.position, Quaternion.identity);
         Vector3 playerDirection = (playerRef.transform.position - transform.position).normalized;
         //calculate forces directions
-        float yForce = Mathf.Abs(Mathf.Sin(rockShootAngle));
-        Vector2 xzForce = new Vector2(playerDirection.x*Mathf.Cos(rockShootAngle), playerDirection.z * Mathf.Cos(rockShootAngle));
+        float yForce = Mathf.Abs(Mathf.Sin(radAngle));
+        Vector2 xzForce = new Vector2(playerDirection.x, playerDirection.z);
         //add force to direction
-        Vector3 shootForce = new Vector3(xzForce.x, yForce, xzForce.y) * rockShootForce;
+        Vector3 shootDirection = new Vector3(xzForce.x, 1, xzForce.y) * rockShootForce;
         //shoot
-        rock.GetComponent<Rigidbody>().AddForce(shootForce * rockShootForce);
+        rock.GetComponent<Rigidbody>().AddForce(shootDirection );
     }
 }

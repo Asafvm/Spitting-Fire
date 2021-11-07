@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+/// <summary>
+/// Just float the GameObject up and down
+/// </summary>
 public class TargetFloater : MonoBehaviour
 {
     private float height;

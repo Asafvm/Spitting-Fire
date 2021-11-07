@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4421274673020612795}
   - component: {fileID: 6632024432228017736}
   - component: {fileID: 1318782771616396273}
+  - component: {fileID: 8521759220301122860}
   m_Layer: 8
   m_Name: BallonGun
   m_TagString: Enemy
@@ -257,6 +258,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 5
+--- !u!54 &8521759220301122860
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3557985459334129964}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6886358580742998247
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +324,19 @@ MonoBehaviour:
   destroyProjectileDelay: 4
   gunPoint: {fileID: 1720764692951346345}
   lookAheadFactor: 15
+--- !u!114 &4152450914111807083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8708422378273072986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c2dd1d924445643bcea62369212373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
 --- !u!1001 &707352013620000252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -358,6 +388,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5894111807915941141, guid: 4e2288030a5b27e45ac86826efa1f46f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3972a79c6d8422e4fad5deb667ddf398, type: 2}
     - target: {fileID: 919132149155446097, guid: 4e2288030a5b27e45ac86826efa1f46f, type: 3}
       propertyPath: m_Name
       value: HotAirBaloon

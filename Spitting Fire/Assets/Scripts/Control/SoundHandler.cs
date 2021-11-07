@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Play firing and explosion sounds upon request
+/// </summary>
 public class SoundHandler : MonoBehaviour
 {
     [SerializeField] AudioSource source;

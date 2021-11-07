@@ -60,7 +60,17 @@ ModelImporter:
   - first:
       74: 2580539527027764474
     second: Elevator.Right|PropellerAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spitfire
+    second: {fileID: 2100000, guid: 5388dff05b69c8744b54aede6fea4a9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows
+    second: {fileID: 2100000, guid: aafb2ba26ff95b1429a70d74470403ca, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

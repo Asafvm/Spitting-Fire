@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-
+/// <summary>
+/// Move aircraft part in different angle and axis
+/// </summary>
 public class AircraftRigController : MonoBehaviour
 {
     [Header("Rudder")]
@@ -33,7 +35,6 @@ public class AircraftRigController : MonoBehaviour
     private ControlInputManager control;
     private bool landingGearDeployed = true;
     private Coroutine landingGearCoroutine;
-    private List<Transform> planeParts;
 
     private void Awake()
     {

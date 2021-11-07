@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Read input from user defined keys (Project Settings)
+/// </summary>
 public class ControlInputManager : MonoBehaviour
 {
     

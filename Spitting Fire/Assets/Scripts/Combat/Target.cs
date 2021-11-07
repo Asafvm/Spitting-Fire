@@ -7,6 +7,10 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+/// <summary>
+/// Acts as health for a GameObject. 1 hit kills
+/// </summary>
 public class Target : MonoBehaviour
 {
     [SerializeField] ParticleSystem explosionEffect;

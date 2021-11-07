@@ -107,6 +107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
+--- !u!4 &534074891018748830 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6465897409485958106, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
+  m_PrefabInstance: {fileID: 6832542443945568324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &205967331217509900 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6632024432228017736, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
@@ -118,11 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31060358f5dd20f4a8f2c3812aac7e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &534074891018748830 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6465897409485958106, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
-  m_PrefabInstance: {fileID: 6832542443945568324}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6832542443956572284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,6 +193,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6465897409485958106, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
   m_PrefabInstance: {fileID: 6832542443956572284}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7647309334508339659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3815290460250411447, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
+  m_PrefabInstance: {fileID: 6832542443956572284}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d16556110358e342a3ca595d111a338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &205967331214898740 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6632024432228017736, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
@@ -202,6 +213,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31060358f5dd20f4a8f2c3812aac7e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5521220550562030477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1318782771616396273, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
+  m_PrefabInstance: {fileID: 6832542443956572284}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac0e2989f10d794da631863eb6baffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6832542444435466259
@@ -456,12 +478,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2589547437023724551, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2589547437023724551, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 205967330093938964}
+      objectReference: {fileID: 205967331214898740}
+    - target: {fileID: 2589547437023724551, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7647309334508339659}
+    - target: {fileID: 2589547437023724551, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 5521220550562030477}
+    - target: {fileID: 2589547437023724551, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3557985459334129964, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
       propertyPath: m_Name
       value: BallonGun (3)
@@ -517,17 +551,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6465897409485958106, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
   m_PrefabInstance: {fileID: 6832542444970319708}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &205967330093938964 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6632024432228017736, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
-  m_PrefabInstance: {fileID: 6832542444970319708}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31060358f5dd20f4a8f2c3812aac7e50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6832542445058501672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -852,14 +875,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6832542445542113105}
     m_Modifications:
-    - target: {fileID: 2589547437023724551, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2589547437023724551, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 205967330573670765}
     - target: {fileID: 3557985459334129964, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
       propertyPath: m_Name
       value: BallonGun (1)
@@ -915,17 +930,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6465897409485958106, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
   m_PrefabInstance: {fileID: 6832542445730037541}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &205967330573670765 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6632024432228017736, guid: e6b4e32e587e3734b95f4aacd56ed2c2, type: 3}
-  m_PrefabInstance: {fileID: 6832542445730037541}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31060358f5dd20f4a8f2c3812aac7e50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6832542445921065636
 PrefabInstance:
   m_ObjectHideFlags: 0

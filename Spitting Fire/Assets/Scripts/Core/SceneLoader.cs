@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Handle scene transitions
+/// </summary>
 public class SceneLoader : MonoBehaviour
 {
 
