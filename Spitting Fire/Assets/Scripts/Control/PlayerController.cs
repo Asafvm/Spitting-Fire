@@ -135,7 +135,6 @@ public class PlayerController : MonoBehaviour
 
         while(timeSinceStartedBoosting < boostTime)
         {
-            Debug.Log($"Boosting for {timeSinceStartedBoosting}s");
             rb.AddForce(transform.forward * 30f);
             yield return null;
         }

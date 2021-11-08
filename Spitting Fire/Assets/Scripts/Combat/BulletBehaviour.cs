@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// If bullet hits a Target component, active Hit()
+/// If bullet hits a Target component, activate Hit()
 /// otherwise, play hit effect and disappear
 /// </summary>
 public class BulletBehaviour : MonoBehaviour
@@ -20,9 +20,13 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        Debug.Log($"root {transform.root} other {other.transform.root}");
         if (bullet == null) return;
         int numOfColisions = bullet.GetCollisionEvents(other, events);
 
+        //ignore self hit
+        if (other.transform.root.Equals(transform.root)) return;
+        //if Target found, hit it
         if (other.TryGetComponent(out Target target))
             target.Hit();
 
