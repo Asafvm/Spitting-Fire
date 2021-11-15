@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lavaEffect: {fileID: 1827857656635456521}
   eriptionDelay: 1
-  rockShootAngle: 55
-  rockShootForce: 50
+  rockShootAngle: 60
+  rockShootForce: 1600
   magmaRock: {fileID: 3186548315505653494, guid: 9a05a84c0f8f39746ab40758e55d346b, type: 3}
   spawnPoint: {fileID: 4399362263110193280}
 --- !u!1 &1827857656635456523

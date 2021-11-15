@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private AircraftRigController rigController;
     private Target self;
     private Terrain groundRef;
-    private float gravityModifier = 2.4f;
+    
     private bool isGrounded = true;
     private bool isBoosting = false;
     private float timeSinceStartedBoosting = float.MaxValue;
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public float thrustValue = 0;
     [SerializeField] float boostTime = 1f;
     [SerializeField] float timeBetweenBoosts = 10f;
+    [SerializeField] float gravityModifier = 4f;
     [Header("Turning Speed")]
     [SerializeField] float maxRollSpeed;
     [SerializeField] float maxYawSpeed;
@@ -135,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
         while(timeSinceStartedBoosting < boostTime)
         {
-            rb.AddForce(transform.forward * 30f);
+            rb.AddForce(transform.forward * 40f);
             yield return null;
         }
         isBoosting = false;
@@ -156,7 +157,8 @@ public class PlayerController : MonoBehaviour
         rb.useGravity = thrustValue < maxThrust / 3f;   //turn off gravity when thrust at a decent speed
         transform.Rotate(pitchSpeed, yawSpeed * thrustPercent, -rollSpeed); //rotate the plane
         rb.AddForce(transform.forward * maxThrust * thrustPercent); //add thrust force
-        rb.AddForce(-rb.velocity/2 + Physics.gravity/gravityModifier);    //add drag and gravity force
+        Vector3 dragForce = -rb.velocity / 1.5f + Physics.gravity / gravityModifier;
+        rb.AddForce(dragForce);    //add drag and gravity force
         
     }
 
